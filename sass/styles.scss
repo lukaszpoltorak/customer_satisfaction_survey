@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'MaisonNeue_Bold';
+  src: url(https://www.intive.com/fonts/MaisonNeue/MaisonNeueWEB-Bold.woff2);
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import 'reset';
+@import 'c-survey';
+@import 'variables';
+@import 'header';
+@import 'c-survey-validation';
+
+@import 'components/folding-cube';
+@import "components/slider";

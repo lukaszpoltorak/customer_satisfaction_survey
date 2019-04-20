@@ -1,0 +1,141 @@
+@import 'variables';
+
+.c-survey-header {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #fff;
+  }
+
+  &__logo {
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 24px;
+  padding-left: 30px;
+  &--img{
+    width: 56px;
+    height: 24px;
+  }
+  }
+  &__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 32px;
+    padding-left: 22px;
+    &--element {
+      width: 104px;
+      height: 64px;
+    }
+  }
+  &__heading {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    &:before {
+      top: 100px;
+      right: 0;
+    }
+    &:after {
+      top: 100px;
+      left: 0;
+    }
+    &:before, &:after {
+      background-color: $color-blue;
+      content: "";
+      display: block;
+      height: 4px;
+      position: absolute;
+      width: 31px;
+    }
+    &--h1 {
+      display: block;
+      width: 258px;
+      padding: auto;
+      overflow: hidden;
+      font-size: 40px;
+      font-family: $font-primary-bold;
+      position: relative;
+      line-height: 48px;
+    }
+  }
+  &__text {
+    display: flex;
+    justify-content: center;
+    font-family: $font-second-light;
+    text-align: center;
+    font-size: 14px;
+    line-height: 24px;
+    margin: 0 auto;
+    padding: 40px 32px;
+  }
+}
+
+@media all and (min-width: $bp-tab-portrait) {
+  .c-survey-header {
+    &__image {
+      &--element {
+        width: 129px;
+        height: 80px;
+      }
+    }
+    &__heading {
+      &:before {
+        top: 100px;
+        right: 0;
+      }
+      &:after {
+        top: 100px;
+        left: 0;
+      }
+      &:before, &:after {
+        width: 131px;
+      }
+      &--h1 {
+        width: 465px;
+      }
+    }
+    &__text {
+      align-content: center;
+      padding: 40px 32px;
+      width: 465px;
+    }
+  }
+}
+
+@media all and (min-width: $bp-desk) {
+  .c-survey-header {
+    &__image {
+      padding-left: 50px;
+      &--element {
+        width: 233px;
+        height: 144px;
+      }
+    }
+    &__heading {
+      &:before {
+        top: 100px;
+        right: 50px;
+      }
+      &:after {
+        top: 100px;
+        left: 50px;
+      }
+      &:before, &:after {
+        width: 285px;
+      }
+      &--h1 {
+        width: 465px;
+      }
+    }
+    &__text {
+      align-content: center;
+      padding: 40px 32px;
+      width: 465px;
+    }
+  }
+}

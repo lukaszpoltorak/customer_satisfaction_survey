@@ -1,0 +1,31 @@
+@import 'variables';
+
+span.field-validation-error {
+  font-family: $font-primary-bold;
+  color: $color-pink;
+  font-size: 14px;
+  margin: 0 0 15px 40px;
+}
+
+input[type="text"] + span.field-validation-error {
+  margin: 0 0 8px 18px;
+}
+
+.css-radio-field__input.input-validation-error + .css-radio-field__label {
+  &:before {
+    border: 1px solid $color-pink;
+  }
+}
+
+.css-checkbox-field__input.input-validation-error + .css-checkbox-field__label {
+  &:before {
+    border: 1px solid $color-pink;
+  }
+}
+
+.css-text-field__input.input-validation-error  {
+  border-bottom: 1px solid $color-pink;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4gICAgPGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4gICAgICAgIDxwYXRoIGQ9Ik0wIDBoMjR2MjRIMHoiLz4gICAgICAgIDxwYXRoIGZpbGw9IiNFMjE3NzYiIGQ9Ik0xMiAxOGE2IDYgMCAxIDAgMC0xMiA2IDYgMCAwIDAgMCAxMnptMCAxYTcgNyAwIDEgMSAwLTE0IDcgNyAwIDAgMSAwIDE0eiIvPiAgICAgICAgPHBhdGggZmlsbD0iI0UyMTc3NiIgZD0iTTcuNzI0IDkuMzU0bC42MTUtLjc4OSA3Ljg3OSA2LjE1Ni0uNjE2Ljc4OHoiLz4gICAgPC9nPjwvc3ZnPg==);
+  background-position: 99% 50%;
+  background-repeat: no-repeat;
+}
