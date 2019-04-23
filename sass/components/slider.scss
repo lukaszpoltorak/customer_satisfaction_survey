@@ -1,3 +1,4 @@
+
 .c-survey-slider {
     width: 100%;
     font-family: sans-serif;
@@ -5,6 +6,7 @@
     flex-direction: column;
     align-items: stretch;
 }
+
 .c-survey-slider input {
     background-color: #fafafa;
 }
@@ -41,6 +43,14 @@
     width: 100%;
     position: relative;
 }
+
+input[type=range]:focus {
+    outline: none;
+}
+input[type='range']::-moz-focus-outer {
+    border: 0;
+}
+/*
 
 input[type=range] {
     -webkit-appearance: none;
@@ -150,4 +160,76 @@ input[type=range]:focus::-ms-fill-lower {
 }
 input[type=range]:focus::-ms-fill-upper {
     background: #367ebd;
+}
+*/
+
+$track-w: 100%;
+$track-h: 2px;
+$thumb-d: 24px;
+$track-c: #b4b4b4;
+$filll-c: #007ac9;
+
+@mixin track($fill: 0) {
+    box-sizing: border-box;
+    border: none;
+    width: $track-w; height: $track-h;
+    background: $track-c;
+
+    @if $fill == 1 {
+        .chrome-slider & {
+            background: linear-gradient($filll-c, $filll-c)
+            0/var(--sx) 100% no-repeat $track-c;
+        }
+    }
+}
+
+@mixin fill() {
+    height: $track-h;
+    background: $filll-c
+}
+@mixin thumb() {
+    box-sizing: border-box;
+    border: none;
+    width: $thumb-d; height: $thumb-d;
+    border-radius: 50%;
+    background: #007ac9;
+}
+
+[type='range'] {
+    &, &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+    }
+    --min: 1;
+    --max: 10;
+    --val: 0;
+    --range: calc(var(--max) - var(--min));
+    --ratio: calc((var(--val) - var(--min))/var(--range));
+    --sx: calc(.5*#{$thumb-d} + var(--ratio)*(100% - #{$thumb-d}));
+    margin: 5% 0;
+    position: relative;
+    padding: 0;
+    width: $track-w; height: $thumb-d;
+    background: transparent;
+    font: 1em/1 arial, sans-serif;
+
+    &::-webkit-slider-runnable-track {
+        @include track(1)
+    }
+    &::-moz-range-track { @include track }
+    &::-ms-track { @include track }
+
+    &::-moz-range-progress { @include fill }
+    &::-ms-fill-lower { @include fill }
+
+    &::-webkit-slider-thumb {
+        margin-top: .5*($track-h - $thumb-d);
+        @include thumb
+    }
+    &::-moz-range-thumb { @include thumb }
+    &::-ms-thumb {
+        margin-top: 0;
+        @include thumb
+    }
+
+    &::-ms-tooltip { display: none }
 }
